@@ -38,7 +38,7 @@ if submitted:
 
 df = pd.read_csv('answers.csv', header=None).T
 
-df2 = pd.DataFrame(columns=pos_dict.values()+['-'])
+df2 = pd.DataFrame(columns=list(pos_dict.values())+['-'])
 for n in range(df.shape[0]):
     df2.loc[n] = 0
 #print('???')
@@ -52,4 +52,7 @@ for idx, row in df.iterrows():
 st.title('Résultats')
         
 st.bar_chart(data=df2)
+
+
+
 print('done')
